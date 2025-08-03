@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Post</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <div class="navbar">
+    <h1>View Post</h1>
+    <a href="/posts" class="create-post-btn">← Back to Posts</a>
+  </div>
+
+  <div class="container">
+    <div class="question-card">
+      <div class="username">@<%= post.username %></div>
+      <div class="separator"></div>
+      <div class="post-content"><%= post.content %></div>
+
+      <div class="card-links" style="margin-top: 1rem;">
+        <a href="/posts/<%= post.id %>/edit">Edit</a>
+        <form method="POST" action="/posts/<%= post.id %>?_method=DELETE" style="display:inline;">
+          <button class="delete-btn">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

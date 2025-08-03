@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Post</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <div class="navbar">
+    <h1>Edit Post</h1>
+    <a href="/posts" class="create-post-btn">← Back to Posts</a>
+  </div>
+
+  <div class="container">
+    <div class="form-card">
+      <form action="/posts/<%= post.id %>?_method=PATCH" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" value="<%= post.username %>" required disabled>
+
+        <label for="content">Post Content</label>
+        <textarea id="content" name="content" rows="6" required><%= post.content %></textarea>
+
+        <button type="submit" class="submit-btn">Update Post</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
